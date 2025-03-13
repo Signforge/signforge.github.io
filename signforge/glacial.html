@@ -7,7 +7,7 @@
     <title>Glacial Events Signs</title>
     <style>
         body {
-            background-color: #1E1E1E;
+            background-color: black;
             color: #EFEFEF;
             font-family: "Fira Code", monospace;
             font-weight: lighter;
@@ -20,40 +20,32 @@
             margin: 0;
         }
 
-
         p {
             padding-top: -20px;
         }
 
         table {
             border-collapse: collapse;
-            width: 90%;
-            max-width: 1200px;
+            max-width: 100%;
+            margin: auto;
         }
 
-        th {
-            padding: 10px;
-            text-align: center;
-            font-size: 1.2rem;
-            width: 200px;
-        }
-
-        td {
+        th, td {
             padding: 10px;
             text-align: center;
             vertical-align: top;
-            width: 200px;
+            width: 400px;
         }
 
         img {
             width: 100%;
-            max-width: 180px;
+            max-width: 200px;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
 
         img:hover {
-            transform: scale(1.5);
+            transform: scale(1.1);
         }
 
         .confirmation {
@@ -61,215 +53,739 @@
             border: solid #EFEFEF 1px;
             position: absolute;
             padding: 5px;
-            top: 500px;
             visibility: hidden;
             font-size: 1rem;
             pointer-events: none;
             transition: top 0.05s, left 0.05s;
+        }
 
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Tabs container for horizontal alignment */
+        .tab-labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style tab labels */
+        .tab-label {
+            padding: 5px 20px 5px 20px;
+            background: #1E1E1E;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Change background color of the active tab */
+        input[type="radio"]:checked ~ .tab-labels .tab-label {
+            background: #1E1E1E;
+            border-bottom: 2px solid #1E1E1E;
+        }
+
+        #tab1:checked ~ .tab-labels .tab-label:nth-of-type(1),
+        #tab2:checked ~ .tab-labels .tab-label:nth-of-type(2),
+        #tab3:checked ~ .tab-labels .tab-label:nth-of-type(3),
+        #tab4:checked ~ .tab-labels .tab-label:nth-of-type(4),
+        #tab5:checked ~ .tab-labels .tab-label:nth-of-type(5) {
+            background: #016CA5;
+            border-bottom: 2px solid white;
+        }
+
+        /* Hide all tab content by default */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Show the selected tab's content */
+        #tab1:checked ~ .tab-container .content-1,
+        #tab2:checked ~ .tab-container .content-2,
+        #tab3:checked ~ .tab-container .content-3,
+        #tab4:checked ~ .tab-container .content-4,
+        #tab5:checked ~ .tab-container .content-5 {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <img alt="Glacial Logo" src="glacial.png">
-    <p>💡 Click on a sign to copy its url. Then paste it in-game in the sign selection dialog</p>
-    <table>
-        <tr>
-            <th>6x1 blue signs</th>
-            <th>4x1 blue signs</th>
-            <th>2x1 blue signs</th>
-            <th>2x1 blue signs</th>
-            <th> </th>
-            <th>6x1 black signs</th>
-            <th>4x1 black signs</th>
-            <th>2x1 black signs</th>
-            <th>2x1 black signs</th>
-        </tr>
-        <tr>
-            <td>
-                <img src="https://www.aht.li/3900150/GLACIAL_6x1_BLUE_BASE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900150/GLACIAL_6x1_BLUE_BASE.jpg')">
-                <img src="https://www.aht.li/3900151/GLACIAL_6x1_BLUE_EVENTS.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900150/GLACIAL_6x1_BLUE_EVENTS.jpg')">
-                <img src="https://www.aht.li/3900152/GLACIAL_6x1_BLUE_LEAGUE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900152/GLACIAL_6x1_BLUE_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900153/GLACIAL_6x1_BLUE_DISCORD.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900153/GLACIAL_6x1_BLUE_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900154/GLACIAL_6x1_BLUE_START.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900154/GLACIAL_6x1_BLUE_START.jpg')">
-                <img src="https://www.aht.li/3900155/GLACIAL_6x1_BLUE_CHECKPOINT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900155/GLACIAL_6x1_BLUE_CHECKPOINT.jpg')">
-                <img src="https://www.aht.li/3900156/GLACIAL_6x1_BLUE_FINISH.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900156/GLACIAL_6x1_BLUE_FINISH.jpg')">
-                <img src="https://www.aht.li/3900157/GLACIAL_6x1_BLUE_MULTILAP.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900157/GLACIAL_6x1_BLUE_MULTILAP.jpg')">
-                <img src="https://www.aht.li/3900158/GLACIAL_6x1_BLUE_GPS.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900158/GLACIAL_6x1_BLUE_GPS.jpg')">
-                <img src="https://www.aht.li/3900159/GLACIAL_6x1_BLUE_TURNRIGHT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900159/GLACIAL_6x1_BLUE_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900160/GLACIAL_6x1_BLUE_TURNLEFT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900160/GLACIAL_6x1_BLUE_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900161/GLACIAL_6x1_BLUE_DOOGIE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900161/GLACIAL_6x1_BLUE_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900162/GLACIAL_6x1_BLUE_ALECKETE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900162/GLACIAL_6x1_BLUE_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900163/GLACIAL_6x1_BLUE_WOUTER.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900163/GLACIAL_6x1_BLUE_WOUTER.jpg')">
-                <img src="https://www.aht.li/3900164/GLACIAL_6x1_BLUE_MAPNAME.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900164/GLACIAL_6x1_BLUE_MAPNAME.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900185/GLACIAL_4x1_BLUE_BASE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900185/GLACIAL_4x1_BLUE_BASE.jpg')">
-                <img src="https://www.aht.li/3900186/GLACIAL_4x1_BLUE_LOGO.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900186/GLACIAL_4x1_BLUE_LOGO.jpg')">
-                <img src="https://www.aht.li/3900188/GLACIAL_4x1_BLUE_LEAGUE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900188/GLACIAL_4x1_BLUE_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900189/GLACIAL_4x1_BLUE_DISCORD.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900189/GLACIAL_4x1_BLUE_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900191/GLACIAL_4x1_BLUE_GPS.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900191/GLACIAL_4x1_BLUE_GPS.jpg')">
-                <img src="https://www.aht.li/3900197/GLACIAL_4x1_BLUE_TURNRIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900197/GLACIAL_4x1_BLUE_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900198/GLACIAL_4x1_BLUE_TURNLEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900198/GLACIAL_4x1_BLUE_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900193/GLACIAL_4x1_BLUE_DOOGIE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900193/GLACIAL_4x1_BLUE_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900194/GLACIAL_4x1_BLUE_ALECKETE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900194/GLACIAL_4x1_BLUE_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900196/GLACIAL_4x1_BLUE_WOOTER.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900196/GLACIAL_4x1_BLUE_WOOTER.jpg')">
-                <img src="https://www.aht.li/3900200/GLACIAL_4x1_BLUE_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900200/GLACIAL_4x1_BLUE_UP.jpg')">
-                <img src="https://www.aht.li/3900201/GLACIAL_4x1_BLUE_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900201/GLACIAL_4x1_BLUE_DOWN.jpg')">
-                <img src="https://www.aht.li/3900202/GLACIAL_4x1_BLUE_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900202/GLACIAL_4x1_BLUE_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900204/GLACIAL_4x1_BLUE_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900204/GLACIAL_4x1_BLUE_LEFT.jpg')">
-                <img src="https://www.aht.li/3900205/GLACIAL_4x1_BLUE_UP_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900205/GLACIAL_4x1_BLUE_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900208/GLACIAL_4x1_BLUE_DOWN_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900208/GLACIAL_4x1_BLUE_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900209/GLACIAL_4x1_BLUE_DOWN_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900209/GLACIAL_4x1_BLUE_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900207/GLACIAL_4x1_BLUE_UP_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900207/GLACIAL_4x1_BLUE_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900211/GLACIAL_4x1_BLUE_SPIN_TEXT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900211/GLACIAL_4x1_BLUE_SPIN_TEXT.jpg')">
-                <img src="https://www.aht.li/3900213/GLACIAL_4x1_BLUE_SPIN_UP_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900213/GLACIAL_4x1_BLUE_SPIN_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900214/GLACIAL_4x1_BLUE_SPIN_UP_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900214/GLACIAL_4x1_BLUE_SPIN_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900215/GLACIAL_4x1_BLUE_SPIN_RIGHT_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900215/GLACIAL_4x1_BLUE_SPIN_RIGHT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900216/GLACIAL_4x1_BLUE_SPIN_LEFT_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900216/GLACIAL_4x1_BLUE_SPIN_LEFT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900218/GLACIAL_4x1_BLUE_SPIN_RIGHT_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900218/GLACIAL_4x1_BLUE_SPIN_RIGHT_UP.jpg')">
-                <img src="https://www.aht.li/3900219/GLACIAL_4x1_BLUE_SPIN_LEFT_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900219/GLACIAL_4x1_BLUE_SPIN_LEFT_UP.jpg')">
-                <img src="https://www.aht.li/3900220/GLACIAL_4x1_BLUE_SPIN_DOWN_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900220/GLACIAL_4x1_BLUE_SPIN_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900221/GLACIAL_4x1_BLUE_SPIN_DOWN_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900221/GLACIAL_4x1_BLUE_SPIN_DOWN_LEFT.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900249/GLACIAL_2x1_BLUE_BASE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900249/GLACIAL_2x1_BLUE_BASE.jpg')">
-                <img src="https://www.aht.li/3900250/GLACIAL_2x1_BLUE_TURNRIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900250/GLACIAL_2x1_BLUE_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900251/GLACIAL_2x1_BLUE_TURNLEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900251/GLACIAL_2x1_BLUE_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900252/GLACIAL_2x1_BLUE_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900252/GLACIAL_2x1_BLUE_UP.jpg')">
-                <img src="https://www.aht.li/3900253/GLACIAL_2x1_BLUE_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900253/GLACIAL_2x1_BLUE_DOWN.jpg')">
-                <img src="https://www.aht.li/3900254/GLACIAL_2x1_BLUE_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900254/GLACIAL_2x1_BLUE_LEFT.jpg')">
-                <img src="https://www.aht.li/3900255/GLACIAL_2x1_BLUE_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900255/GLACIAL_2x1_BLUE_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900256/GLACIAL_2x1_BLUE_UP_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900256/GLACIAL_2x1_BLUE_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900257/GLACIAL_2x1_BLUE_DOWN_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900257/GLACIAL_2x1_BLUE_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900258/GLACIAL_2x1_BLUE_DOWN_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900258/GLACIAL_2x1_BLUE_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900259/GLACIAL_2x1_BLUE_UP_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900259/GLACIAL_2x1_BLUE_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900261/GLACIAL_2x1_BLUE_DISCORD.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900261/GLACIAL_2x1_BLUE_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900262/GLACIAL_2x1_BLUE_DOOGIE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900262/GLACIAL_2x1_BLUE_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900263/GLACIAL_2x1_BLUE_ALECKETE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900263/GLACIAL_2x1_BLUE_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900264/GLACIAL_2x1_BLUE_WOOTER.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900264/GLACIAL_2x1_BLUE_WOOTER.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900265/GLACIAL_2x1__BLUE_LOGO.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900265/GLACIAL_2x1__BLUE_LOGO.jpg')">
-                <img src="https://www.aht.li/3900266/GLACIAL_2x1_BLUE_GPS.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900266/GLACIAL_2x1_BLUE_GPS.jpg')">
-                <img src="https://www.aht.li/3900267/GLACIAL_2x1_BLUE_SPIN_TEXT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900267/GLACIAL_2x1_BLUE_SPIN_TEXT.jpg')">
-                <img src="https://www.aht.li/3900268/GLACIAL_2x1_BLUE_SPIN_DOWN_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900268/GLACIAL_2x1_BLUE_SPIN_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900269/GLACIAL_2x1_BLUE_SPIN_DOWN_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900269/GLACIAL_2x1_BLUE_SPIN_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900270/GLACIAL_2x1_BLUE_SPIN_LEFT_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900270/GLACIAL_2x1_BLUE_SPIN_LEFT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900271/GLACIAL_2x1_BLUE_SPIN_LEFT_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900271/GLACIAL_2x1_BLUE_SPIN_LEFT_UP.jpg')">
-                <img src="https://www.aht.li/3900272/GLACIAL_2x1_BLUE_SPIN_RIGHT_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900272/GLACIAL_2x1_BLUE_SPIN_RIGHT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900273/GLACIAL_2x1_BLUE_SPIN_RIGHT_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900273/GLACIAL_2x1_BLUE_SPIN_RIGHT_UP.jpg')">
-                <img src="https://www.aht.li/3900274/GLACIAL_2x1_BLUE_SPIN_UP_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900274/GLACIAL_2x1_BLUE_SPIN_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900275/GLACIAL_2x1_BLUE_SPIN_UP_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900275/GLACIAL_2x1_BLUE_SPIN_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900276/GLACIAL_2x1_BLUE_EVENTS.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900276/GLACIAL_2x1_BLUE_EVENTS.jpg')">
-                <img src="https://www.aht.li/3900260/GLACIAL_2x1_BLUE_LEAGUE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900260/GLACIAL_2x1_BLUE_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900277/GLACIAL_2x1__BLUE_TM.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900277/GLACIAL_2x1__BLUE_TM.jpg')">
-                <img src="https://www.aht.li/3900278/GLACIAL_2x1__BLUE_TMX.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900278/GLACIAL_2x1__BLUE_TMX.jpg')">
-            </td>
-            <td>
-                
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900166/GLACIAL_6x1_BLACK_BASE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900166/GLACIAL_6x1_BLACK_BASE.jpg')">
-                <img src="https://www.aht.li/3900167/GLACIAL_6x1_BLACK_EVENTS.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900167/GLACIAL_6x1_BLACK_EVENTS.jpg')">
-                <img src="https://www.aht.li/3900168/GLACIAL_6x1_BLACK_LEAGUE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900168/GLACIAL_6x1_BLACK_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900169/GLACIAL_6x1_BLACK_DISCORD.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900169/GLACIAL_6x1_BLACK_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900170/GLACIAL_6x1_BLACK_START.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900170/GLACIAL_6x1_BLACK_START.jpg')">
-                <img src="https://www.aht.li/3900171/GLACIAL_6x1_BLACK_CHECKPOINT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900171/GLACIAL_6x1_BLACK_CHECKPOINT.jpg')">
-                <img src="https://www.aht.li/3900172/GLACIAL_6x1_BLACK_FINISH.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900172/GLACIAL_6x1_BLACK_FINISH.jpg')">
-                <img src="https://www.aht.li/3900173/GLACIAL_6x1_BLACK_MULTILAP.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900173/GLACIAL_6x1_BLACK_MULTILAP.jpg')">
-                <img src="https://www.aht.li/3900174/GLACIAL_6x1_BLACK_GPS.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900174/GLACIAL_6x1_BLACK_GPS.jpg')">
-                <img src="https://www.aht.li/3900176/GLACIAL_6x1_BLACK_TURNRIGHT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900176/GLACIAL_6x1_BLACK_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900177/GLACIAL_6x1_BLACK_TURNLEFT.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900177/GLACIAL_6x1_BLACK_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900179/GLACIAL_6x1_BLACK_DOOGIE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900179/GLACIAL_6x1_BLACK_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900180/GLACIAL_6x1_BLACK_ALECKETE.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900180/GLACIAL_6x1_BLACK_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900181/GLACIAL_6x1_BLACK_WOUTER.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900181/GLACIAL_6x1_BLACK_WOUTER.jpg')">
-                <img src="https://www.aht.li/3900183/GLACIAL_6x1_BLACK_MAPNAME.jpg" alt="6x1" onclick="copyToClipboard('https://www.aht.li/3900183/GLACIAL_6x1_BLACK_MAPNAME.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900222/GLACIAL_4x1_BLACK_BASE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900222/GLACIAL_4x1_BLACK_BASE.jpg')">
-                <img src="https://www.aht.li/3900223/GLACIAL_4x1_BLACK_LOGO.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900223/GLACIAL_4x1_BLACK_LOGO.jpg')">
-                <img src="https://www.aht.li/3900224/GLACIAL_4x1_BLACK_LEAGUE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900224/GLACIAL_4x1_BLACK_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900225/GLACIAL_4x1_BLACK_DISCORD.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900225/GLACIAL_4x1_BLACK_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900226/GLACIAL_4x1_BLACK_GPS.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900226/GLACIAL_4x1_BLACK_GPS.jpg')">
-                <img src="https://www.aht.li/3900227/GLACIAL_4x1_BLACK_TURNRIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900227/GLACIAL_4x1_BLACK_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900228/GLACIAL_4x1_BLACK_TURNLEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900228/GLACIAL_4x1_BLACK_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900229/GLACIAL_4x1_BLACK_DOOGIE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900229/GLACIAL_4x1_BLACK_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900230/GLACIAL_4x1_BLACK_ALECKETE.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900230/GLACIAL_4x1_BLACK_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900231/GLACIAL_4x1_BLACK_WOOTER.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900231/GLACIAL_4x1_BLACK_WOOTER.jpg')">
-                <img src="https://www.aht.li/3900232/GLACIAL_4x1_BLACK_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900232/GLACIAL_4x1_BLACK_UP.jpg')">
-                <img src="https://www.aht.li/3900233/GLACIAL_4x1_BLACK_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900233/GLACIAL_4x1_BLACK_DOWN.jpg')">
-                <img src="https://www.aht.li/3900234/GLACIAL_4x1_BLACK_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900234/GLACIAL_4x1_BLACK_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900235/GLACIAL_4x1_BLACK_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900235/GLACIAL_4x1_BLACK_LEFT.jpg')">
-                <img src="https://www.aht.li/3900238/GLACIAL_4x1_BLACK_UP_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900238/GLACIAL_4x1_BLACK_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900236/GLACIAL_4x1_BLACK_DOWN_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900236/GLACIAL_4x1_BLACK_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900237/GLACIAL_4x1_BLACK_DOWN_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900237/GLACIAL_4x1_BLACK_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900239/GLACIAL_4x1_BLACK_UP_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900239/GLACIAL_4x1_BLACK_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900243/GLACIAL_4x1_BLACK_SPIN_TEXT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900243/GLACIAL_4x1_BLACK_SPIN_TEXT.jpg')">
-                <img src="https://www.aht.li/3900244/GLACIAL_4x1_BLACK_SPIN_UP_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900244/GLACIAL_4x1_BLACK_SPIN_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900245/GLACIAL_4x1_BLACK_SPIN_UP_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900245/GLACIAL_4x1_BLACK_SPIN_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900240/GLACIAL_4x1_BLACK_SPIN_RIGHT_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900240/GLACIAL_4x1_BLACK_SPIN_RIGHT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900241/GLACIAL_4x1_BLACK_SPIN_LEFT_DOWN.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900241/GLACIAL_4x1_BLACK_SPIN_LEFT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900246/GLACIAL_4x1_BLACK_SPIN_RIGHT_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900246/GLACIAL_4x1_BLACK_SPIN_RIGHT_UP.jpg')">
-                <img src="https://www.aht.li/3900247/GLACIAL_4x1_BLACK_SPIN_LEFT_UP.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900247/GLACIAL_4x1_BLACK_SPIN_LEFT_UP.jpg')">
-                <img src="https://www.aht.li/3900248/GLACIAL_4x1_BLACK_SPIN_DOWN_RIGHT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900248/GLACIAL_4x1_BLACK_SPIN_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900242/GLACIAL_4x1_BLACK_SPIN_DOWN_LEFT.jpg" alt="4x1" onclick="copyToClipboard('https://www.aht.li/3900242/GLACIAL_4x1_BLACK_SPIN_DOWN_LEFT.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900280/GLACIAL_2x1_BLACK_BASE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900280/GLACIAL_2x1_BLACK_BASE.jpg')">
-                <img src="https://www.aht.li/3900284/GLACIAL_2x1_BLACK_TURNRIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900284/GLACIAL_2x1_BLACK_TURNRIGHT.jpg')">
-                <img src="https://www.aht.li/3900285/GLACIAL_2x1_BLACK_TURNLEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900285/GLACIAL_2x1_BLACK_TURNLEFT.jpg')">
-                <img src="https://www.aht.li/3900286/GLACIAL_2x1_BLACK_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900286/GLACIAL_2x1_BLACK_UP.jpg')">
-                <img src="https://www.aht.li/3900287/GLACIAL_2x1_BLACK_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900287/GLACIAL_2x1_BLACK_DOWN.jpg')">
-                <img src="https://www.aht.li/3900288/GLACIAL_2x1_BLACK_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900288/GLACIAL_2x1_BLACK_LEFT.jpg')">
-                <img src="https://www.aht.li/3900289/GLACIAL_2x1_BLACK_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900289/GLACIAL_2x1_BLACK_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900290/GLACIAL_2x1_BLACK_UP_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900290/GLACIAL_2x1_BLACK_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900291/GLACIAL_2x1_BLACK_DOWN_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900291/GLACIAL_2x1_BLACK_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900292/GLACIAL_2x1_BLACK_DOWN_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900292/GLACIAL_2x1_BLACK_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900293/GLACIAL_2x1_BLACK_UP_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900293/GLACIAL_2x1_BLACK_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900294/GLACIAL_2x1_BLACK_DISCORD.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900294/GLACIAL_2x1_BLACK_DISCORD.jpg')">
-                <img src="https://www.aht.li/3900295/GLACIAL_2x1_BLACK_DOOGIE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900295/GLACIAL_2x1_BLACK_DOOGIE.jpg')">
-                <img src="https://www.aht.li/3900296/GLACIAL_2x1_BLACK_ALECKETE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900296/GLACIAL_2x1_BLACK_ALECKETE.jpg')">
-                <img src="https://www.aht.li/3900297/GLACIAL_2x1_BLACK_WOOTER.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900297/GLACIAL_2x1_BLACK_WOOTER.jpg')">
-            </td>
-            <td>
-                <img src="https://www.aht.li/3900281/GLACIAL_2x1__BLACK_LOGO.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900281/GLACIAL_2x1__BLACK_LOGO.jpg')">
-                <img src="https://www.aht.li/3900298/GLACIAL_2x1_BLACK_GPS.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900298/GLACIAL_2x1_BLACK_GPS.jpg')">
-                <img src="https://www.aht.li/3900299/GLACIAL_2x1_BLACK_SPIN_TEXT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900299/GLACIAL_2x1_BLACK_SPIN_TEXT.jpg')">
-                <img src="https://www.aht.li/3900300/GLACIAL_2x1_BLACK_SPIN_DOWN_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900300/GLACIAL_2x1_BLACK_SPIN_DOWN_LEFT.jpg')">
-                <img src="https://www.aht.li/3900301/GLACIAL_2x1_BLACK_SPIN_DOWN_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900301/GLACIAL_2x1_BLACK_SPIN_DOWN_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900302/GLACIAL_2x1_BLACK_SPIN_LEFT_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900302/GLACIAL_2x1_BLACK_SPIN_LEFT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900303/GLACIAL_2x1_BLACK_SPIN_LEFT_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900303/GLACIAL_2x1_BLACK_SPIN_LEFT_UP.jpg')">
-                <img src="https://www.aht.li/3900304/GLACIAL_2x1_BLACK_SPIN_RIGHT_DOWN.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900304/GLACIAL_2x1_BLACK_SPIN_RIGHT_DOWN.jpg')">
-                <img src="https://www.aht.li/3900305/GLACIAL_2x1_BLACK_SPIN_RIGHT_UP.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900305/GLACIAL_2x1_BLACK_SPIN_RIGHT_UP.jpg')">
-                <img src="https://www.aht.li/3900306/GLACIAL_2x1_BLACK_SPIN_UP_LEFT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900306/GLACIAL_2x1_BLACK_SPIN_UP_LEFT.jpg')">
-                <img src="https://www.aht.li/3900307/GLACIAL_2x1_BLACK_SPIN_UP_RIGHT.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900307/GLACIAL_2x1_BLACK_SPIN_UP_RIGHT.jpg')">
-                <img src="https://www.aht.li/3900308/GLACIAL_2x1_BLACK_EVENTS.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900308/GLACIAL_2x1_BLACK_EVENTS.jpg')">
-                <img src="https://www.aht.li/3900309/GLACIAL_2x1_BLACK_LEAGUE.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900309/GLACIAL_2x1_BLACK_LEAGUE.jpg')">
-                <img src="https://www.aht.li/3900282/GLACIAL_2x1__BLACK_TM.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900282/GLACIAL_2x1__BLACK_TM.jpg')">
-                <img src="https://www.aht.li/3900283/GLACIAL_2x1__BLACK_TMX.jpg" alt="2x1" onclick="copyToClipboard('https://www.aht.li/3900283/GLACIAL_2x1__BLACK_TMX.jpg')">
-            </td>
-        </tr>
-    </table>
+    <p>Glacial Signs</p>
+    <p>💡 Click on a sign to copy its URL. Then paste it in-game in the sign selection dialog.</p>
 
-    <div id="confirmation" class="confirmation">Sign copied ! Paste it in-game !</div>
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+    <input type="radio" id="tab3" name="tabs">
+    <input type="radio" id="tab4" name="tabs">
+    <input type="radio" id="tab5" name="tabs">
+
+    <div class="tab-labels">
+        <label for="tab1" class="tab-label">1x1 Signs</label>
+        <label for="tab2" class="tab-label">2x1 Signs</label>
+        <label for="tab3" class="tab-label">4x1 Signs</label>
+        <label for="tab4" class="tab-label">6x1 Signs</label>
+        <label for="tab5" class="tab-label">Mappers & CP Signs</label>
+    </div>
+
+
+    <div class="tab-container">
+        <div class="tab-content content-1">
+            <table>
+                <tr>
+                    <th>1x1 Mono Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_MONO_BASE.jpg" alt="1x1 Mono Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_MONO_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>1x1 Blue Background</th>
+                    <th>1x1 White Backround</th>
+                    <th>1x1 Black Backround</th>
+                    
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_BASE.jpg" alt="1x1 Blue Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_BASE.jpg" alt="1x1 White Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_BASE.jpg" alt="1x1 Black Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>1x1 White Overlay</th>
+                    <th>1x1 Blue Overlay</th>
+                    <th>1x1 Black Overlay</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_OVERLAY.png" alt="1x1 Blue Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_OVERLAY.png" alt="1x1 White Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_OVERLAY.png" alt="1x1 Black Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_OVERLAY.png')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>1x1 White + signs</th>
+                    <th>1x1 Blue + signs</th>
+                    <th>1x1 Black + signs</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_RIGHT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LEFT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP_RIGHT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP_LEFT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN_RIGHT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN_LEFT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_LEFT_DOWN.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_RIGHT_DOWN.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_LEFT_UP.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_RIGHT_UP.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_UP_LEFT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_UP_RIGHT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_DOWN_LEFT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_DOWN_RIGHT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_TEXT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_GPS_TEXT.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_GPS_ICON.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DISCORD.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LOGO.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_TRACKMANIA.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_TMX.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_EVENTS.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LEAGUE.png" alt="1x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_WHITE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_RIGHT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LEFT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP_RIGHT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP_LEFT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN_RIGHT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN_LEFT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_LEFT_DOWN.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_RIGHT_DOWN.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_LEFT_UP.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_RIGHT_UP.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_UP_LEFT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_UP_RIGHT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_DOWN_LEFT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_DOWN_RIGHT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_TEXT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_GPS_TEXT.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_GPS_ICON.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DISCORD.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LOGO.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_TRACKMANIA.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_TMX.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_EVENTS.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LEAGUE.png" alt="1x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLUE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_RIGHT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LEFT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP_RIGHT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP_LEFT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN_RIGHT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN_LEFT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_LEFT_DOWN.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_RIGHT_DOWN.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_LEFT_UP.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_RIGHT_UP.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_UP_LEFT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_UP_RIGHT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_DOWN_LEFT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_DOWN_RIGHT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_TEXT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_GPS_TEXT.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_GPS_ICON.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DISCORD.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LOGO.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_TRACKMANIA.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_TMX.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_EVENTS.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LEAGUE.png" alt="1x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_1x1_BLACK_LEAGUE.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-2">
+            <table>
+                <tr>
+                    <th>2x1 Mono Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_MONO_BASE.jpg" alt="2x1 Mono Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_MONO_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>2x1 Blue Background</th>
+                    <th>2x1 White Backround</th>
+                    <th>2x1 Black Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_BASE.jpg" alt="2x1 Blue Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_BASE.jpg" alt="2x1 White Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_BASE.jpg" alt="2x1 Black Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>2x1 White Overlay</th>
+                    <th>2x1 Blue Overlay</th>
+                    <th>2x1 Black Overlay</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_OVERLAY.png" alt="2x1 Blue Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_OVERLAY.png" alt="2x1 White Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_OVERLAY.png" alt="2x1 Black Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_OVERLAY.png')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>2x1 White + signs</th>
+                    <th>2x1 Blue + signs</th>
+                    <th>2x1 Black + signs</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_RIGHT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LEFT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP_RIGHT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP_LEFT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN_RIGHT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN_LEFT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_LEFT_DOWN.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_RIGHT_DOWN.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_LEFT_UP.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_RIGHT_UP.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_UP_LEFT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_UP_RIGHT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_DOWN_LEFT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_DOWN_RIGHT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_TEXT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_GPS_TEXT.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_GPS_ICON.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DISCORD.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LOGO.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_TRACKMANIA.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_TMX.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_EVENTS.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LEAGUE.png" alt="2x1 White" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_WHITE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_RIGHT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LEFT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP_RIGHT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP_LEFT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN_RIGHT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN_LEFT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_LEFT_DOWN.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_RIGHT_DOWN.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_LEFT_UP.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_RIGHT_UP.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_UP_LEFT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_UP_RIGHT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_DOWN_LEFT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_DOWN_RIGHT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_TEXT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_GPS_TEXT.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_GPS_ICON.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DISCORD.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LOGO.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_TRACKMANIA.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_TMX.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_EVENTS.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LEAGUE.png" alt="2x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLUE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_RIGHT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LEFT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP_RIGHT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP_LEFT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN_RIGHT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN_LEFT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_LEFT_DOWN.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_RIGHT_DOWN.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_LEFT_UP.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_RIGHT_UP.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_UP_LEFT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_UP_RIGHT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_DOWN_LEFT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_DOWN_RIGHT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_TEXT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_GPS_TEXT.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_GPS_ICON.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DISCORD.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LOGO.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_TRACKMANIA.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_TMX.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_EVENTS.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LEAGUE.png" alt="2x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_2x1_BLACK_LEAGUE.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-3">
+            <table>
+                <tr>
+                    <th>4x1 Mono Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_MONO_BASE.jpg" alt="4x1 Mono Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_MONO_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>4x1 Blue Background</th>
+                    <th>4x1 White Backround</th>
+                    <th>4x1 Black Backround</th>
+
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_BASE.jpg" alt="4x1 Blue Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_BASE.jpg" alt="4x1 White Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_BASE.jpg" alt="4x1 Black Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>4x1 White Overlay</th>
+                    <th>4x1 Blue Overlay</th>
+                    <th>4x1 Black Overlay</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_OVERLAY.png" alt="4x1 Blue Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_OVERLAY.png" alt="4x1 White Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_OVERLAY.png" alt="4x1 Black Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_OVERLAY.png')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>4x1 White + signs</th>
+                    <th>4x1 Blue + signs</th>
+                    <th>4x1 Black + signs</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_RIGHT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LEFT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP_RIGHT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP_LEFT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN_RIGHT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN_LEFT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_LEFT_DOWN.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_RIGHT_DOWN.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_LEFT_UP.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_RIGHT_UP.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_UP_LEFT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_UP_RIGHT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_DOWN_LEFT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_DOWN_RIGHT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_TEXT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_GPS_TEXT.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_GPS_ICON.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DISCORD.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LOGO.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_TRACKMANIA.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_TMX.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_EVENTS.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LEAGUE.png" alt="4x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_WHITE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_RIGHT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LEFT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP_RIGHT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP_LEFT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN_RIGHT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN_LEFT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_LEFT_DOWN.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_RIGHT_DOWN.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_LEFT_UP.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_RIGHT_UP.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_UP_LEFT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_UP_RIGHT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_DOWN_LEFT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_DOWN_RIGHT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_TEXT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_GPS_TEXT.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_GPS_ICON.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DISCORD.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LOGO.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_TRACKMANIA.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_TMX.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_EVENTS.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LEAGUE.png" alt="4x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLUE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_RIGHT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LEFT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP_RIGHT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP_LEFT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN_RIGHT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN_LEFT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_LEFT_DOWN.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_RIGHT_DOWN.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_LEFT_UP.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_RIGHT_UP.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_UP_LEFT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_UP_RIGHT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_DOWN_LEFT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_DOWN_RIGHT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_TEXT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_GPS_TEXT.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_GPS_ICON.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DISCORD.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LOGO.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_TRACKMANIA.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_TMX.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_EVENTS.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LEAGUE.png" alt="4x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_4x1_BLACK_LEAGUE.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-4">
+            <table>
+                <tr>
+                    <th>6x1 Mono Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_MONO_BASE.jpg" alt="6x1 Mono Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_MONO_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>6x1 Blue Background</th>
+                    <th>6x1 White Backround</th>
+                    <th>6x1 Black Backround</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BASE.jpg" alt="6x1 Blue Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BASE.jpg" alt="6x1 White Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BASE.jpg')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BASE.jpg" alt="6x1 Black Background" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BASE.jpg')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>6x1 White Overlay</th>
+                    <th>6x1 Blue Overlay</th>
+                    <th>6x1 Black Overlay</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_OVERLAY.png" alt="6x1 Blue Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_OVERLAY.png" alt="6x1 White Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_OVERLAY.png')"></td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_OVERLAY.png" alt="6x1 Black Overlay" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_OVERLAY.png')"></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>6x1 White + signs</th>
+                    <th>6x1 Blue + signs</th>
+                    <th>6x1 Black + signs</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RIGHT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LEFT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP_RIGHT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP_LEFT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN_RIGHT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN_LEFT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_LEFT_DOWN.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_RIGHT_DOWN.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_LEFT_UP.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_RIGHT_UP.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_UP_LEFT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_UP_RIGHT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_DOWN_LEFT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_DOWN_RIGHT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_TEXT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_GPS_TEXT.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_GPS_ICON.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DISCORD.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LOGO.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TRACKMANIA.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TMX.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_EVENTS.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LEAGUE.png" alt="6x1 WHITE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RIGHT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LEFT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP_RIGHT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP_LEFT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN_RIGHT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN_LEFT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_LEFT_DOWN.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_RIGHT_DOWN.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_LEFT_UP.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_RIGHT_UP.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_UP_LEFT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_UP_RIGHT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_DOWN_LEFT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_DOWN_RIGHT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_TEXT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_GPS_TEXT.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_GPS_ICON.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DISCORD.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LOGO.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TRACKMANIA.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TMX.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_EVENTS.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LEAGUE.png" alt="6x1 BLUE" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_LEAGUE.png')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RIGHT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LEFT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP_RIGHT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP_LEFT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN_RIGHT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN_LEFT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_LEFT_DOWN.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_LEFT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_RIGHT_DOWN.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_RIGHT_DOWN.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_LEFT_UP.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_LEFT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_RIGHT_UP.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_RIGHT_UP.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_UP_LEFT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_UP_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_UP_RIGHT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_UP_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_DOWN_LEFT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_DOWN_LEFT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_DOWN_RIGHT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_DOWN_RIGHT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_TEXT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SPIN_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_GPS_TEXT.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_GPS_TEXT.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_GPS_ICON.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_GPS_ICON.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DISCORD.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DISCORD.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LOGO.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LOGO.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TRACKMANIA.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TRACKMANIA.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TMX.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TMX.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_EVENTS.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_EVENTS.png')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LEAGUE.png" alt="6x1 BLACK" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_LEAGUE.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab-content content-5">
+            <table>
+                <tr>
+                    <th>4x1 Signs</th>
+                    <th>6x1 Signs</th>
+                    <th>Numbered CP Signs</th>
+                </tr>
+                <tr>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ACATGIRL" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ACATGIRL" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ACATGIRL" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ALECKETE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ALECKETE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ALECKETE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BURNTBAGELS" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BURNTBAGELS" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BURNTBAGELS" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DARKLIGHT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DARKLIGHT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DARKLIGHT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOOGIE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOOGIE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOOGIE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HENKISME" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HENKISME" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HENKISME" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HRANDERSEN" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HRANDERSEN" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HRANDERSEN" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MAU" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MAU" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MAU" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MATTYNATOR" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MATTYNATOR" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MATTYNATOR" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_QUOT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_QUOT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_QUOT" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RAE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RAE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RAE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SLIDELOCK" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SLIDELOCK" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SLIDELOCK" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TNTREE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TNTREE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TNTREE" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_WOOTER" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_WOOTER" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_WOOTER" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ZEPNA" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ZEPNA')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ZEPNA" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ZEPNA')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ZEPNA" alt="4x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ZEPNA')">
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ACATGIRL" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ACATGIRL" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ACATGIRL" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ACATGIRL')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ALECKETE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ALECKETE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ALECKETE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ALECKETE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BURNTBAGELS" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BURNTBAGELS" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BURNTBAGELS" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_BURNTBAGELS')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DARKLIGHT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DARKLIGHT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DARKLIGHT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DARKLIGHT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOOGIE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOOGIE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOOGIE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_DOOGIE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HENKISME" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HENKISME" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HENKISME" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HENKISME')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HRANDERSEN" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HRANDERSEN" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HRANDERSEN" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_HRANDERSEN')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MAU" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MAU" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MAU" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MAU')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MATTYNATOR" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MATTYNATOR" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MATTYNATOR" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_MATTYNATOR')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_QUOT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_QUOT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_QUOT" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_QUOT')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RAE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RAE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RAE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_RAE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SLIDELOCK" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SLIDELOCK" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SLIDELOCK" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_SLIDELOCK')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TNTREE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TNTREE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TNTREE" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_TNTREE')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_WOOTER" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_WOOTER" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_WOOTER" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_WOOTER')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ZEPNA" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_ZEPNA')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ZEPNA" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_ZEPNA')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ZEPNA" alt="6x1 Mapper Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_ZEPNA')">
+                        
+                    </td>
+                    <td><img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP01" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP01')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP01" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP01')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP01" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP01')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP02" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP02')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP02" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP02')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP02" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP02')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP03" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP03')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP03" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP03')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP03" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP03')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP04" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP04')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP04" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP04')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP04" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP04')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP05" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP05')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP05" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP05')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP05" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP05')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP06" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP06')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP06" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP06')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP06" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP06')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP07" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP07')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP07" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP07')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP07" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP07')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP08" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP08')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP08" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP08')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP08" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP08')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP09" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_WHITE_CP09')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP09" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLUE_CP09')">
+                        <img src="http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP09" alt="Numbered CP Sign" onclick="copyToClipboard('http://maniacdn.net/syrion/Glacial/GLACIAL_6x1_BLACK_CP09')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">Sign copied! Paste it in-game!</div>
 
     <script>
         function copyToClipboard(url) {
             navigator.clipboard.writeText(url).then(() => {
-            const confirmation = document.getElementById('confirmation');
-            confirmation.style.visibility = 'visible';
-        setTimeout(() => {
-            confirmation.style.visibility = 'hidden';
-            }, 2000);
-           }).catch(err => {
-        console.error('Failed to copy: ', err);
-          });
+                const confirmation = document.getElementById('confirmation');
+                confirmation.style.visibility = 'visible';
+                setTimeout(() => {
+                    confirmation.style.visibility = 'hidden';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
+
         document.addEventListener('mousemove', (event) => {
-          const confirmation = document.getElementById('confirmation');
-          confirmation.style.left = `${event.pageX + 20}px`;
-          confirmation.style.top = `${event.pageY}px`;
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.left = `${event.pageX - 150}px`;
+            confirmation.style.top = `${event.pageY - 50}px`;
         });
     </script>
 
