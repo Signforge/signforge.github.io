@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/mudmasters.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">
+    <title>Mudmasters 2</title>
+    <style>
+        body {
+            background-color: #161616;
+            color: white;
+            font-family: "Fira Code", monospace;
+            font-weight: lighter;
+            font-optical-sizing: auto;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        p {
+            padding-top: -20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 400px;
+        }
+
+        img {
+            max-height: 150px;
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: solid #FF772C 1px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        img:hover {
+            transform: scale(0.9);
+        }
+
+        img#logo {
+            border: none;
+        }
+
+        .confirmation {
+            background-color: #FF772C;
+            border: solid white 1px;
+            color: white;
+            position: absolute;
+            padding: 5px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Tabs container for horizontal alignment */
+        .tab-labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style tab labels */
+        .tab-label {
+            padding: 5px 20px 5px 20px;
+            background: #161616;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Change background color of the active tab */
+        input[type="radio"]:checked ~ .tab-labels .tab-label {
+            background: #FF772C;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+
+        #tab1:checked ~ .tab-labels .tab-label:nth-of-type(1),
+        #tab2:checked ~ .tab-labels .tab-label:nth-of-type(2),
+        #tab3:checked ~ .tab-labels .tab-label:nth-of-type(3),
+        #tab4:checked ~ .tab-labels .tab-label:nth-of-type(4),
+        #tab5:checked ~ .tab-labels .tab-label:nth-of-type(5) {
+            background: white;
+            color: #161616;
+            border-bottom: 2px solid white;
+        }
+
+        /* Hide all tab content by default */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Show the selected tab's content */
+        #tab1:checked ~ .tab-container .content-1,
+        #tab2:checked ~ .tab-container .content-2,
+        #tab3:checked ~ .tab-container .content-3,
+        #tab4:checked ~ .tab-container .content-4,
+        #tab5:checked ~ .tab-container .content-5 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" style="max-width: 64px;" src="images/mudmasters.png">
+    <p>Mudmasters 2</p>
+    <p>💡 Click on a sign to copy its URL. Then paste it in-game in the sign selection dialog.</p>
+
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+    <input type="radio" id="tab3" name="tabs">
+    <input type="radio" id="tab4" name="tabs">
+
+    <div class="tab-labels">
+        <label for="tab1" class="tab-label">1x1 Signs</label>
+        <label for="tab2" class="tab-label">2x1 Signs</label>
+        <label for="tab3" class="tab-label">4x1 Signs</label>
+        <label for="tab4" class="tab-label">6x1 Banners</label>
+    </div>
+
+
+    <div class="tab-container">
+        <div class="tab-content content-1">
+            <table>
+                <tr>
+                    <th>1x1 Backgrounds</th>
+                    <th>1x1 Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_WHITE.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_ORANGE.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_ORANGE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_YELLOW.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_YELLOW.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_LIME.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_LIME.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_GREEN.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_CYAN.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_CYAN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_BLUE.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_PINK.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_PURPLE.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_RED.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_03666D.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_03666D.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_F095A1.jpg" alt="1x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_BG_F095A1.jpg')">
+                    </td>
+
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_LOGO.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_LOGOTYPE.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_RIGHT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_LEFT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_UP.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_DOWN.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_UPRIGHT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_DOWNRIGHT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_UPLEFT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_DOWNLEFT.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_TM.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN1.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN1.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN2.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN2.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN3.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_SLOGAN3.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DISCORD.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_GPS.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_START.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_CP.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_CP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_MULTILAP.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_FINISH.png" alt="1x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_1x1_FINISH.png')">
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-2">
+
+            <table>
+                <tr>
+                    <th>2x1 Backgrounds</th>
+                    <th>2x1 Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_WHITE.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_ORANGE.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_ORANGE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_YELLOW.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_YELLOW.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_LIME.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_LIME.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_GREEN.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_CYAN.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_CYAN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_BLUE.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_PINK.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_PURPLE.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_RED.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_03666D.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_03666D.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_F095A1.jpg" alt="2x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_BG_F095A1.jpg')">
+                    </td>
+
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_LOGO.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_LOGOTYPE.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_RIGHT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_LEFT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_UP.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_DOWN.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_UPRIGHT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_DOWNRIGHT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_UPLEFT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_DOWNLEFT.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_TM.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN1.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN1.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN2.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN2.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN3.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_SLOGAN3.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DISCORD.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_GPS.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_START.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_CP.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_CP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_MULTILAP.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_FINISH.png" alt="2x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_2x1_FINISH.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-3">
+            <table>
+                <tr>
+                    <th>4x1 Backgrounds</th>
+                    <th>4x1 Signs</th>
+                    <th>4x1 Mapnames</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_WHITE.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_ORANGE.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_ORANGE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_YELLOW.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_YELLOW.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_LIME.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_LIME.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_GREEN.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_CYAN.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_CYAN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_BLUE.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_PINK.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_PURPLE.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_RED.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_03666D.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_03666D.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_F095A1.jpg" alt="4x1 Background" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_BG_F095A1.jpg')">
+                    </td>
+
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_LOGO.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_LOGOTYPE.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_RIGHT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_LEFT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_UP.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_DOWN.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_UPRIGHT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_DOWNRIGHT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_UPLEFT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_DOWNLEFT.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_TM.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN1.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN1.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN2.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN2.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN3.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_SLOGAN3.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DISCORD.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_GPS.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_START.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_CP.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_CP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MULTILAP.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_FINISH.png" alt="4x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_FINISH.png')">
+                    </td>
+
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_FISSURE.png" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_FISSURE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_OLEANDER.png" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_OLEANDER.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_CAPOO.png" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_CAPOO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_PROHIBIT.png" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_PROHIBIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_RASPBERRY.png" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_4x1_MAP_RASPBERRY.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-4">
+            <table>
+                <tr>
+                    <th>6x1 Signs</th>
+                    <th>6x1 Mapnames</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_LOGO.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_LOGO.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_LOGOTYPE.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_LOGOTYPE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_RIGHT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_RIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_LEFT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_LEFT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_UP.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_UP.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_DOWN.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_ARROW_DOWN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_UPRIGHT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_UPRIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_DOWNRIGHT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_DOWNRIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_UPLEFT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_UPLEFT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_DOWNLEFT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DIAG_DOWNLEFT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_TM.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_TM.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN1.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN1.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN2.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN2.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN3.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_SLOGAN3.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DISCORD.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_DISCORD.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_GPS.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_GPS.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_START.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_START.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_CP.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_CP.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MULTILAP.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MULTILAP.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_FINISH.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_FINISH.jpg')">
+                    </td>
+
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_FISSURE.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_FISSURE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_OLEANDER.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_OLEANDER.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_CAPOO.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_CAPOO.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_PROHIBIT.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_PROHIBIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_RASPBERRY.jpg" alt="6x1" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/MUDMASTERS2_6x1_MAP_RASPBERRY.jpg')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">Sign copied! Paste it in-game!</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const confirmation = document.getElementById('confirmation');
+                confirmation.style.visibility = 'visible';
+                setTimeout(() => {
+                    confirmation.style.visibility = 'hidden';
+                }, 1000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.left = `${event.pageX - 150}px`;
+            confirmation.style.top = `${event.pageY - 50}px`;
+        });
+    </script>
+
+</body>
+</html>

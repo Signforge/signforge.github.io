@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/obsidian.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">
+    <title>Obsidian Mapping Signs</title>
+    <style>
+        body {
+            background-color: #BA72BA;
+            color: white;
+            font-family: "Fira Code", monospace;
+            font-weight: lighter;
+            font-optical-sizing: auto;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        p {
+            padding-top: -20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 400px;
+        }
+
+        img {
+            max-height: 150px;
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: solid #201020 1px;
+            border-radius: 5px;
+        }
+
+        img:hover {
+            transform: scale(0.9);
+        }
+
+        img#logo {
+            border: none;
+        }
+
+        .confirmation {
+            background-color: #201020;
+            border: solid white 1px;
+            color: white;
+            position: absolute;
+            padding: 5px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Tabs container for horizontal alignment */
+        .tab-labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style tab labels */
+        .tab-label {
+            padding: 5px 20px 5px 20px;
+            background: #BA72BA;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Change background color of the active tab */
+        input[type="radio"]:checked ~ .tab-labels .tab-label {
+            background: #201020;
+            border-bottom: 2px solid white;
+        }
+
+        #tab1:checked ~ .tab-labels .tab-label:nth-of-type(1),
+        #tab2:checked ~ .tab-labels .tab-label:nth-of-type(2),
+        #tab3:checked ~ .tab-labels .tab-label:nth-of-type(3),
+        #tab4:checked ~ .tab-labels .tab-label:nth-of-type(4),
+        #tab5:checked ~ .tab-labels .tab-label:nth-of-type(5) {
+            background: white;
+            color: #BA72BA;
+            border-bottom: 2px solid white;
+        }
+
+        /* Hide all tab content by default */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Show the selected tab's content */
+        #tab1:checked ~ .tab-container .content-1,
+        #tab2:checked ~ .tab-container .content-2,
+        #tab3:checked ~ .tab-container .content-3,
+        #tab4:checked ~ .tab-container .content-4,
+        #tab5:checked ~ .tab-container .content-5 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" style="max-width: 64px;" src="images/obsidian.png">
+    <p>Obsidian Mapping Signs</p>
+    <p>💡 Click on a sign to copy its URL. Then paste it in-game in the sign selection dialog.</p>
+
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+    <input type="radio" id="tab3" name="tabs">
+    <input type="radio" id="tab4" name="tabs">
+    <input type="radio" id="tab5" name="tabs">
+
+    <div class="tab-labels">
+        <label for="tab1" class="tab-label">Backgrounds</label>
+        <label for="tab2" class="tab-label">1x1 +Signs</label>
+        <label for="tab3" class="tab-label">2x1 +Signs</label>
+        <label for="tab4" class="tab-label">4x1 +Signs</label>
+        <label for="tab5" class="tab-label">6x1 Signs</label>
+    </div>
+
+
+    <div class="tab-container">
+        <div class="tab-content content-1">
+            <table>
+                <tr>
+                    <th>1x1 Backgrounds</th>
+                    <th>2x1 Backgrounds</th>
+                    <th>4x1 Backgrounds</th>
+                    <th>6x1 Backgrounds</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_WHITE.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLACK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLACK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUE.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUEDARK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUEDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUELIGHT.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_BLUELIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREEN.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREENDARK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREENDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREENLIGHT.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_GREENLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PINK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PINKDARK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PINKDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PURPLE.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_RED.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_REDDARK.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_REDDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_REDLIGHT.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_REDLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_YELLOW.jpg" alt="1x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_1x1_BG_YELLOW.jpg')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_WHITE.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLACK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLACK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUE.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUEDARK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUEDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUELIGHT.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_BLUELIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREEN.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREENDARK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREENDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREENLIGHT.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_GREENLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PINK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PINKDARK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PINKDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PURPLE.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_RED.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_REDDARK.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_REDDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_REDLIGHT.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_REDLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_YELLOW.jpg" alt="2x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_2x1_BG_YELLOW.jpg')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_WHITE.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLACK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLACK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUE.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUEDARK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUEDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUELIGHT.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_BLUELIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREEN.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREENDARK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREENDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREENLIGHT.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_GREENLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PINK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PINKDARK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PINKDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PURPLE.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_RED.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_REDDARK.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_REDDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_REDLIGHT.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_REDLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_YELLOW.jpg" alt="4x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_4x1_BG_YELLOW.jpg')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_WHITE.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_WHITE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLACK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLACK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUE.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUEDARK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUEDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUELIGHT.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_BLUELIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREEN.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREEN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREENDARK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREENDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREENLIGHT.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_GREENLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PINK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PINK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PINKDARK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PINKDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PURPLE.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_PURPLE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_RED.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_RED.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_REDDARK.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_REDDARK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_REDLIGHT.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_REDLIGHT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_YELLOW.jpg" alt="6x1 Backgrounds" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_6x1_BG_YELLOW.jpg')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-2">
+            <table>
+                <tr>
+                    <th>1x1 White Arrows +Signs</th>
+                    <th>1x1 White Symbols +Signs</th>
+                    <th>1x1 Black Arrows +Signs</th>
+                    <th>1x1 Black Symbols +Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_UP.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DOWN.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_LEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_RIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_UPRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_DOWNRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_UPLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_DOWNLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_LEFTDOWN.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_RIGHTDOWN.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_RIGHTUP.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_LEFTUP.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_UPRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_UPLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_DOWNRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_DOWNLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_LEFTDOWN.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_RIGHTUP.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_LEFTUP.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_UPRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_UPLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_DOWNRIGHT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_DOWNLEFT.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CW_HORIZONTAL.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CW_VERTICAL.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CCW_HORIZONTAL.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CCW_VERTICAL.png" alt="1x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_LOGO.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_LOGOTYPE.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TM.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_DISCORD.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_START.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_CHECKPOINT.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_FINISH.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_MULTILAP.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_GPS.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ALECKETE.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_BLUEBERRY.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_L8RN3RDS.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SLIDELOCK.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_XAN.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TAILGRAB.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_925.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TMX.png" alt="1x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_1x1_TMX.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_UP.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DOWN.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_LEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_RIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_UPRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_DOWNRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_UPLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_DOWNLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_LEFTDOWN.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_RIGHTDOWN.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_RIGHTUP.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_LEFTUP.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_UPRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_UPLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_DOWNRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_DOWNLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_LEFTDOWN.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_RIGHTUP.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_LEFTUP.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_UPRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_UPLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_DOWNRIGHT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_DOWNLEFT.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CW_HORIZONTAL.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CW_VERTICAL.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CCW_HORIZONTAL.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CCW_VERTICAL.png" alt="1x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_LOGO.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_LOGOTYPE.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TM.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_DISCORD.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_START.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_CHECKPOINT.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_FINISH.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_MULTILAP.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_GPS.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ALECKETE.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_BLUEBERRY.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_L8RN3RDS.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SLIDELOCK.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_XAN.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TAILGRAB.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_925.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TMX.png" alt="1x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_1x1_TMX.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-3">
+
+            <table>
+                <tr>
+                    <th>2x1 White Arrows +Signs</th>
+                    <th>2x1 White Symbols +Signs</th>
+                    <th>2x1 Black Arrows +Signs</th>
+                    <th>2x1 Black Symbols +Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_UP.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DOWN.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_LEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_RIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_UPRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_DOWNRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_UPLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_DOWNLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_LEFTDOWN.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_RIGHTDOWN.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_RIGHTUP.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_LEFTUP.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_UPRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_UPLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_DOWNRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_DOWNLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_LEFTDOWN.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_RIGHTUP.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_LEFTUP.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_UPRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_UPLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_DOWNRIGHT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_DOWNLEFT.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CW_HORIZONTAL.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CW_VERTICAL.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CCW_HORIZONTAL.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CCW_VERTICAL.png" alt="2x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_LOGO.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_LOGOTYPE.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TM.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_DISCORD.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_START.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_CHECKPOINT.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_FINISH.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_MULTILAP.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_GPS.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_ALECKETE_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_BLUEBERRY_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_L8RN3RDS_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_SLIDELOCK_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_XAN_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TAILGRAB_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925_SPLIT.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925_SIMPLE.png" alt="2x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_925_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TMX.png" alt="2x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_2x1_TMX.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_UP.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DOWN.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_LEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_RIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_UPRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_DOWNRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_UPLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_DOWNLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_LEFTDOWN.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_RIGHTDOWN.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_RIGHTUP.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_LEFTUP.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_UPRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_UPLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_DOWNRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_DOWNLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_LEFTDOWN.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_RIGHTUP.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_LEFTUP.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_UPRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_UPLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_DOWNRIGHT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_DOWNLEFT.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CW_HORIZONTAL.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CW_VERTICAL.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CCW_HORIZONTAL.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CCW_VERTICAL.png" alt="2x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_LOGO.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_LOGOTYPE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TM.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_DISCORD.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_START.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_CHECKPOINT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_FINISH.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_MULTILAP.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_GPS.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_ALECKETE_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_BLUEBERRY_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_L8RN3RDS_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_SLIDELOCK_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_XAN_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TAILGRAB_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925_SPLIT.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925_SIMPLE.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_925_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TMX.png" alt="2x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_2x1_TMX.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-4">
+            <table>
+                <tr>
+                    <th>4x1 White Arrows +Signs</th>
+                    <th>4x1 White Symbols +Signs</th>
+                    <th>4x1 Black Arrows +Signs</th>
+                    <th>4x1 Black Symbols +Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_UP.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DOWN.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_LEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_RIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_UPRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_DOWNRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_UPLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_DOWNLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_LEFTDOWN.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_RIGHTDOWN.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_RIGHTUP.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_LEFTUP.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_UPRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_UPLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_DOWNRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_DOWNLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_LEFTDOWN.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_RIGHTUP.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_LEFTUP.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_UPRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_UPLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_DOWNRIGHT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_DOWNLEFT.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CW_HORIZONTAL.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CW_VERTICAL.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CCW_HORIZONTAL.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CCW_VERTICAL.png" alt="4x1 WHITE Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_LOGO.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_LOGOTYPE.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TM.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_DISCORD.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_START.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_CHECKPOINT.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_FINISH.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_MULTILAP.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_GPS.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_ALECKETE_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_BLUEBERRY_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_L8RN3RDS_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_SLIDELOCK_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_XAN_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TAILGRAB_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925_SPLIT.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925_SIMPLE.png" alt="4x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_925_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TMX.png" alt="4x1 White Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_4x1_TMX.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_UP.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_UP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DOWN.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_LEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_LEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_RIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_RIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_UPRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_DOWNRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_UPLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_DOWNLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ARROW_DIAG_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_LEFTDOWN.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_RIGHTDOWN.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_RIGHTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_RIGHTUP.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_LEFTUP.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_UPRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_UPLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_DOWNRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_DOWNLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_UTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_LEFTDOWN.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_LEFTDOWN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_RIGHTUP.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_RIGHTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_LEFTUP.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_LEFTUP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_UPRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_UPRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_UPLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_UPLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_DOWNRIGHT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_DOWNRIGHT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_DOWNLEFT.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_OTURN_DOWNLEFT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CW_HORIZONTAL.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CW_VERTICAL.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CW_VERTICAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CCW_HORIZONTAL.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CCW_HORIZONTAL.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CCW_VERTICAL.png" alt="4x1 BLACK Arrow +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN_CCW_VERTICAL.png')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_LOGO.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_LOGO.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_LOGOTYPE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_LOGOTYPE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TM.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TM.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_DISCORD.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_DISCORD.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_START.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_START.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_CHECKPOINT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_CHECKPOINT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_FINISH.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_FINISH.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_MULTILAP.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_MULTILAP.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_GPS.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_GPS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SPIN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_ALECKETE_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_BLUEBERRY_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_L8RN3RDS_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_SLIDELOCK_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_XAN_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TAILGRAB_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925_SPLIT.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925_SPLIT.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925_SIMPLE.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_925_SIMPLE.png')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TMX.png" alt="4x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_4x1_TMX.png')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-5">
+            <table>
+                <tr>
+                    <th>6x1 White Signs</th>
+                    <th>6x1 Black Signs</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_LOGO.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_LOGO.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_LOGOTYPE.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_LOGOTYPE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TM.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TM.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_DISCORD.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_DISCORD.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_START.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_START.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CHECKPOINT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CHECKPOINT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_FINISH.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_FINISH.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_MULTILAP.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_MULTILAP.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_GPS.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_GPS.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SPIN.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SPIN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_ALECKETE.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_ALECKETE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_ALECKETE_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_ALECKETE_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_BLUEBERRY.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_BLUEBERRY.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_BLUEBERRY_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_BLUEBERRY_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_L8RN3RDS.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_L8RN3RDS.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_L8RN3RDS_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_L8RN3RDS_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SLIDELOCK.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SLIDELOCK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SLIDELOCK_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_SLIDELOCK_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_XAN.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_XAN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_XAN_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_XAN_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TAILGRAB.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TAILGRAB.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TAILGRAB_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TAILGRAB_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_925.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_925.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_925_SPLIT.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_925_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TMX.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_TMX.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_01.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_01.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_02.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_02.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_03.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_03.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_04.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_04.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_05.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_05.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_06.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_06.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_07.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_07.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_08.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_08.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_09.jpg" alt="6x1 WHITE Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_WHITE_6x1_CP_09.jpg')">
+                    </td>
+                    <td>
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_LOGO.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_LOGO.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_LOGOTYPE.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_LOGOTYPE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TM.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TM.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_DISCORD.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_DISCORD.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_START.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_START.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CHECKPOINT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CHECKPOINT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_FINISH.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_FINISH.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_MULTILAP.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_MULTILAP.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_GPS.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_GPS.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SPIN.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SPIN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_ALECKETE.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_ALECKETE.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_ALECKETE_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_ALECKETE_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_BLUEBERRY.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_BLUEBERRY.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_BLUEBERRY_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_BLUEBERRY_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_L8RN3RDS.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_L8RN3RDS.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_L8RN3RDS_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_L8RN3RDS_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SLIDELOCK.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SLIDELOCK.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SLIDELOCK_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_SLIDELOCK_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_XAN.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_XAN.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_XAN_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_XAN_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TAILGRAB.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TAILGRAB.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TAILGRAB_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TAILGRAB_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_925.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_925.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_925_SPLIT.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_925_SPLIT.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TMX.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_TMX.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_01.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_01.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_02.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_02.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_03.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_03.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_04.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_04.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_05.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_05.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_06.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_06.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_07.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_07.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_08.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_08.jpg')">
+                        <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_09.jpg" alt="6x1 BLACK Symbol +Sign" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/OBS_BLACK_6x1_CP_09.jpg')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">Sign copied! Paste it in-game!</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const confirmation = document.getElementById('confirmation');
+                confirmation.style.visibility = 'visible';
+                setTimeout(() => {
+                    confirmation.style.visibility = 'hidden';
+                }, 1000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.left = `${event.pageX - 150}px`;
+            confirmation.style.top = `${event.pageY - 50}px`;
+        });
+    </script>
+
+</body>
+</html>
