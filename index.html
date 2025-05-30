@@ -36,6 +36,12 @@
             color: white;
             transition: 0.5s;
         }
+        a{
+            color: white;
+        }
+        em{
+            color: #ff00dd;
+        }
         #projects{
             margin-top: 300px;
         }
@@ -60,6 +66,21 @@
         .right img{
             max-width: 18px;
         }
+        #footer{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        h3{
+            font-size: 12px;
+            color: white;
+            font-weight: 100;
+        }
+        #footer p{
+            font-size: 10px;
+        }
     </style>
 </head>
 
@@ -68,6 +89,7 @@
         <img id="logo" src="images/signforge.svg">
         <h1>Signforge for Trackmania</h1>
     </div>
+
     <section id="projects">
         <div class="item">
             <div class="left"><p>9Moons</p></div>
@@ -110,6 +132,20 @@
             <div class="right"><p>2025</p><img src="images/arrowright.svg"></div>
         </div>
     </section>
-    <section id="footer"></section>
+
+    <section id="footer">
+        <div>
+            <h3>Privacy Policy</h3>
+            <p>This site does not use cookies or track you. It does however use Google Fonts, which may connect to Google's servers and collect your IP address.</p>
+        </div>
+        <div>
+            <h3>Colophon</h3>
+            <p>Font: Fira code. Frontend inspired by Streamer from Mike Andreuzza. Hosted thanks to Github Pages.</p>
+        </div>
+        <div>
+            <h3>Support Signforge <em>♡</em></h3>
+            <p>Signforge is available exclusively through this website and its Gumroad page. If you'd like to support the project, please consider visiting <a href="https://signforge.gumroad.com/" target="_blank" alt="Link to Gumroad">signforge.gumroad.com</a></p>
+        </div>
+    </section>
 </body>
 </html>
