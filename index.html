@@ -39,6 +39,26 @@
         #logo{
             max-width: 48px;
         }
+        #cta{
+            margin: 0 auto;
+            width: 200px;
+            background-color: transparent;
+            padding: 2px;
+            position: relative;
+            top: 200px;
+            color: white;
+            text-align: center;
+            vertical-align: center;
+            border: white solid 1px;
+            transition: 0.5s;
+        }
+        #cta:hover{
+            color: #0a0a0a;
+            font-style: italic;
+            background-color: white;
+            transition: 0.5s;
+            filter: drop-shadow(0 0 0.3rem white);
+        }
         h1{
             font-size: 16px;
             font-weight: 400;
@@ -59,6 +79,7 @@
         }
         em{
             color: #ff00dd;
+            filter: drop-shadow(0 0 0.3rem #ff00dd);
         }
         #projects{
             margin-top: 300px;
@@ -77,6 +98,9 @@
         .item:hover{
             color: white;
             transition: 0.5s;
+        }
+        .item:hover .left, .item:hover .right{
+            filter: drop-shadow(0 0 0.3rem white);
         }
         .right{
             display: flex;
@@ -110,11 +134,8 @@
         <img id="logo" src="images/signforge.svg">
         <h1>Signforge creates branding assets for Trackmania events</h1>
     </div>
+    <a href="https://signforge.gumroad.com/" target="_blank"><div id="cta"><p>Fuel the Forge</p></div></a>
     <section id="projects">
-        <!-- <div class="item">
-            <div class="left"><p><a id="lookbook" href="lookbook.html" alt="link to signforge lookbook.hml" target="_blank">Download the lookbook.</a></p></div>
-            <div class="right"><p> </p><img src="images/eye.svg"></div>
-        </div> -->
         <div class="item">
             <div class="left"><p>9Moons</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
