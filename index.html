@@ -125,6 +125,17 @@
         #footer p{
             font-size: 10px;
         }
+        img.hover{
+            position: fixed;
+            height: auto;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 999;
+            transition: opacity 0.3s ease;
+        }
+        .item:hover .hover {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -136,47 +147,68 @@
     </div>
     <a href="https://signforge.gumroad.com/" target="_blank"><div id="cta"><p>Fuel the Forge</p></div></a>
     <section id="projects">
-        <div class="item">
+        <div class="item" id="blitz">
+            <img class="hover" src="images/showcase_BLITZ.gif" alt="Showcase of project Blitz League">
+            <div class="left"><p>Blitz League</p></div>
+            <div class="right"><p>2026</p><img src="images/eye.svg"></div>
+        </div>
+        <div class="item" id="xpevo">
+            <img class="hover" src="images/showcase_XPEVO.gif" alt="Showcase of project XPEvo">
+            <div class="left"><p>XPEvo</p></div>
+            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
+        </div>
+        <div class="item" id="surge">
+            <img class="hover" src="images/showcase_SURG.gif" alt="Showcase of project Surge Mapping">
             <div class="left"><p>Surge Mapping</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="9moons">
+            <img class="hover" src="images/showcase_MOON.gif" alt="Showcase of project 9Moons">
             <div class="left"><p>9Moons</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="mudmasters">
+            <img class="hover" src="images/showcase_MUDM.gif" alt="Showcase of project Mudmasters">
             <div class="left"><p>Mudmasters</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="obsidian">
+            <img class="hover" src="images/showcase_OBSI.gif" alt="Showcase of project Obsidian Mapping">
             <div class="left"><p>Obsidian Mapping</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="glacial">
+            <img class="hover" src="images/showcase_GLAC.gif" alt="Showcase of project Glacial Events">
             <div class="left"><p>Glacial Events</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="icycampaign">
+            <img class="hover" src="images/showcase_ICYC.gif" alt="Showcase of project Icy Campaign">
             <div class="left"><p>Icy Campaign</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
-            <div class="left"><p>The Revival</p></div>
+        <div class="item" id="revival">
+            <img class="hover" src="images/showcase_REVI.gif" alt="Showcase of project Revival Campaign">
+            <div class="left"><p>The Revival Campaign</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="omnium">
+            <img class="hover" src="images/showcase_OMNI.gif" alt="Showcase of project Omnium">
             <div class="left"><p>Omnium</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="pil">
+            <img class="hover" src="images/showcase_PIL.gif" alt="Showcase of project Premier Ice League">
             <div class="left"><p>Premier Ice League</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="eic3">
+            <img class="hover" src="images/showcase_EIC3.gif" alt="Showcase of project Evo Ice Cup 3">
             <div class="left"><p>Evo Ice Cup 3</p></div>
             <div class="right"><p>2024</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item">
+        <div class="item" id="g2ic">
+            <img class="hover" src="images/showcase_G2IC.gif" alt="Showcase of project Gear 2 Ice Cup">
             <div class="left"><p>Gear 2 Ice Cup</p></div>
             <div class="right"><p>2024</p><img src="images/eye.svg"></div>
         </div>
@@ -200,5 +232,17 @@
             <p><a id="lookbook" href="lookbook.html" alt="link to signforge lookbook.hml" target="_blank"><img src="images/lookbook.png"></a></p>
         </div> -->
     </section>
+
+<script>
+document.querySelectorAll('.item').forEach(item => {
+    const preview = item.querySelector('.hover');
+
+    item.addEventListener('mousemove', e => {
+        preview.style.left = (e.clientX - 250) + 'px';
+        preview.style.top = (e.clientY - 125) + 'px';
+    });
+});
+</script>
+
 </body>
 </html>
