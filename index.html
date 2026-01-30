@@ -25,7 +25,6 @@
             width: 100%;
             height: 512px;
             background: url('images/sf_background.jpg') no-repeat center center;
-            background-attachment: fixed
             background-size: cover;
             z-index: -1;
         }
@@ -40,16 +39,13 @@
             max-width: 48px;
         }
         #cta{
-            margin: 0 auto;
+            margin: 200px auto 0;
             width: 200px;
             background-color: transparent;
             padding: 2px;
-            position: relative;
-            top: 200px;
             color: white;
             text-align: center;
-            vertical-align: center;
-            border: white solid 1px;
+            border: 1px solid white;
             transition: 0.5s;
         }
         #cta:hover{
@@ -57,7 +53,7 @@
             font-style: italic;
             background-color: white;
             transition: 0.5s;
-            filter: drop-shadow(0 0 0.3rem white);
+            filter: drop-shadow(0 0 0.5rem white);
         }
         h1{
             font-size: 16px;
@@ -74,7 +70,8 @@
             color: white;
             font-weight: 300;
         }
-        a{
+        a#gumroadlink{
+            text-decoration: none;
             color: white;
         }
         em{
@@ -82,7 +79,7 @@
             filter: drop-shadow(0 0 0.3rem #ff00dd);
         }
         #projects{
-            margin-top: 300px;
+            margin-top: 100px;
         }
         #lookbook{
             text-decoration: none;
@@ -145,17 +142,32 @@
         <img id="logo" src="images/signforge.svg">
         <h1>Signforge creates branding assets for Trackmania events and communities.</h1>
     </div>
-    <a href="https://signforge.gumroad.com/" target="_blank"><div id="cta"><p>Fuel the Forge</p></div></a>
+    <a id="gumroadlink" href="https://signforge.gumroad.com/" target="_blank"><div id="cta"><p>Fuel the Forge</p></div></a>
     <section id="projects">
         <div class="item" id="blitz">
             <img class="hover" src="images/showcase_BLITZ.gif" alt="Showcase of project Blitz League">
             <div class="left"><p>Blitz League</p></div>
             <div class="right"><p>2026</p><img src="images/eye.svg"></div>
         </div>
+        <div class="item" id="pil">
+            <img class="hover" src="images/showcase_PIL.gif" alt="Showcase of project PIL">
+            <div class="left"><p>Premier Ice League</p></div>
+            <div class="right"><p>2024 → 2025</p><img src="images/eye.svg"></div>
+        </div>
+        <div class="item" id="mudmasters">
+            <img class="hover" src="images/showcase_MUDM.gif" alt="Showcase of project Mudmasters">
+            <div class="left"><p>Mudmasters</p></div>
+            <div class="right"><p>2024 → 2025</p><img src="images/eye.svg"></div>
+        </div>
+        <div class="item" id="icycampaign">
+            <img class="hover" src="images/showcase_ICYC.gif" alt="Showcase of project Icy Campaign">
+            <div class="left"><p>Icy Campaign</p></div>
+            <div class="right"><p>2023 → 2025</p><img src="images/eye.svg"></div>
+        </div>
         <div class="item" id="xpevo">
             <img class="hover" src="images/showcase_XPEVO.gif" alt="Showcase of project XPEvo">
             <div class="left"><p>XPEvo</p></div>
-            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
+            <div class="right"><p>2023 → 2025</p><img src="images/eye.svg"></div>
         </div>
         <div class="item" id="surge">
             <img class="hover" src="images/showcase_SURG.gif" alt="Showcase of project Surge Mapping">
@@ -164,12 +176,7 @@
         </div>
         <div class="item" id="9moons">
             <img class="hover" src="images/showcase_MOON.gif" alt="Showcase of project 9Moons">
-            <div class="left"><p>9Moons</p></div>
-            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
-        </div>
-        <div class="item" id="mudmasters">
-            <img class="hover" src="images/showcase_MUDM.gif" alt="Showcase of project Mudmasters">
-            <div class="left"><p>Mudmasters</p></div>
+            <div class="left"><p>Gravity Break by 9Moons</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
         <div class="item" id="obsidian">
@@ -182,25 +189,15 @@
             <div class="left"><p>Glacial Events</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item" id="icycampaign">
-            <img class="hover" src="images/showcase_ICYC.gif" alt="Showcase of project Icy Campaign">
-            <div class="left"><p>Icy Campaign</p></div>
-            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
-        </div>
-        <div class="item" id="revival">
-            <img class="hover" src="images/showcase_REVI.gif" alt="Showcase of project Revival Campaign">
-            <div class="left"><p>The Revival Campaign</p></div>
-            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
-        </div>
         <div class="item" id="omnium">
             <img class="hover" src="images/showcase_OMNI.gif" alt="Showcase of project Omnium">
             <div class="left"><p>Omnium</p></div>
             <div class="right"><p>2025</p><img src="images/eye.svg"></div>
         </div>
-        <div class="item" id="pil">
-            <img class="hover" src="images/showcase_PIL.gif" alt="Showcase of project Premier Ice League">
-            <div class="left"><p>Premier Ice League</p></div>
-            <div class="right"><p>2025</p><img src="images/eye.svg"></div>
+        <div class="item" id="revival">
+            <img class="hover" src="images/showcase_REVI.gif" alt="Showcase of project Revival Campaign">
+            <div class="left"><p>The Revival Campaign</p></div>
+            <div class="right"><p>2024</p><img src="images/eye.svg"></div>
         </div>
         <div class="item" id="eic3">
             <img class="hover" src="images/showcase_EIC3.gif" alt="Showcase of project Evo Ice Cup 3">
