@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/IcyCampaignLogo.png" type="image/x-icon">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono&display=swap" rel="stylesheet">
+    <title>Premier Ice League Season 3</title>
+    <style>
+        body {
+            background-color: #111111;
+            color: #FFDB78;
+            font-family: "SUSE Mono", monospace;
+            font-optical-sizing: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+        }
+        th {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            width: 200px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 200px;
+        }
+        img#logo {
+            max-width: 100px;
+            width: 100px;
+            border: none;
+        }
+        img {
+            max-width: 200px;
+            max-height: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin: 5px;
+            border: 1px solid white;
+        }
+        img:hover {
+            transform: scale(1.2);
+        }
+        .confirmation {
+            background-color: #111111;
+            border: solid #FFDB78 1px;
+            position: absolute;
+            padding: 5px;
+            top: 500px;
+            visibility: hidden;
+            font-size: 1rem;
+            text-align: center;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+        .tab-content:nth-child(1) img {
+            max-height: 100px;
+        }
+
+        .tab-content:nth-child(2) img {
+            max-height: 100px;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        .tab-labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .tab-label {
+            padding: 5px 20px 5px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        input[type="radio"]:checked ~ .tab-labels .tab-label {
+            background: #111111;
+            border-bottom: 2px solid #FFDB78;
+        }
+        #tab1:checked ~ .tab-labels .tab-label:nth-of-type(1),
+        #tab2:checked ~ .tab-labels .tab-label:nth-of-type(2) {
+            background: #FFDB78;
+            color: #111111;
+            border-bottom: 2px solid #FFDB78;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        #tab1:checked ~ .tab-container .content-1,
+        #tab2:checked ~ .tab-container .content-2 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" alt="Premier Ice League Logo" src="images/PILLogo.png">
+    <h1>Premier Ice League Season 3</h1>
+
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+
+    <div class="tab-labels">
+        <label for="tab1" class="tab-label">Standard Signs</label>
+        <label for="tab2" class="tab-label">6x1 Blocks Signs</label>
+    </div>
+
+    <div class="tab-container">
+    <div class="tab-content content-1">
+    <table>
+        <tr>
+            <th>1x1 Signs<br></th>
+            <th> </th>
+            <th>2x1 Signs<br></th>
+            <th> </th>
+            <th>4x1 Signs<br></th>
+            <th> </th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_BLUE.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_BLUE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_RED.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_RED.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_ORANGE.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_ORANGE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_WHITE.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_BACKGROUND_WHITE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_LOGO.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_LOGO.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_PIL.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_PIL.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_GPS.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_GPS.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_UPLEFT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_UPRIGHT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_UPRIGHT.png')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UP.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UP.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UPRIGHT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UPRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_RIGHT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_RIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWNRIGHT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWNRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWN.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWNLEFT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_LEFT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_LEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UPLEFT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_ARROW_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_DOWNLEFT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_DOWNRIGHT.png" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_1x1_PLUS_SPIN_DOWNRIGHT.png')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_BLUE.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_BLUE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_RED.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_RED.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_ORANGE.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_ORANGE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_WHITE.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_BACKGROUND_WHITE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_LOGO.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_LOGO.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_PIL.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_PIL.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_GPS.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_GPS.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_UPLEFT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_UPRIGHT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_UPRIGHT.png')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UP.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UP.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UPRIGHT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UPRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_RIGHT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_RIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWNRIGHT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWNRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWN.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWNLEFT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_LEFT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_LEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UPLEFT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_ARROW_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_DOWNLEFT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_DOWNRIGHT.png" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_2x1_PLUS_SPIN_DOWNRIGHT.png')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_BLUE.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_BLUE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_RED.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_RED.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_ORANGE.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_ORANGE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_WHITE.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_BACKGROUND_WHITE.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_LOGO.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_LOGO.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_PIL.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_PIL.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_GPS.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_GPS.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_UPLEFT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_UPRIGHT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_UPRIGHT.png')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UP.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UP.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UPRIGHT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UPRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_RIGHT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_RIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWNRIGHT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWNRIGHT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWN.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWN.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWNLEFT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_LEFT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_LEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UPLEFT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_ARROW_UPLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_DOWNLEFT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_DOWNLEFT.png')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_DOWNRIGHT.png" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_4x1_PLUS_SPIN_DOWNRIGHT.png')">
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <div class="tab-content content-2">
+    <table>
+        <tr>
+            <th>6x1 Blue Signs<br></th>
+            <th>6x1 Red Signs<br></th>
+            <th>6x1 Orange Signs<br></th>
+            <th>6x1 White Signs<br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_PIL.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_PIL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_START.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_START.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_CP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_CP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_FINISH.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_FINISH.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_MULTILAP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_MULTILAP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_GPS.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_BLUE_GPS.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_PIL.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_PIL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_START.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_START.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_CP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_CP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_FINISH.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_FINISH.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_MULTILAP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_MULTILAP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_GPS.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_RED_GPS.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_PIL.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_PIL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_START.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_START.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_CP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_CP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_FINISH.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_FINISH.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_MULTILAP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_MULTILAP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_GPS.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_ORANGE_GPS.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_PIL.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_PIL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_START.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_START.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_CP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_CP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_FINISH.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_FINISH.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_MULTILAP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_MULTILAP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_GPS.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/PILS3_6x1_WHITE_GPS.jpg')">
+            </td>
+        </tr>
+
+    </table>
+    </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">Sign copied !<br />Paste it in-game !</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.visibility = 'visible';
+        setTimeout(() => {
+            confirmation.style.visibility = 'hidden';
+            }, 2000);
+           }).catch(err => {
+        console.error('Failed to copy: ', err);
+          });
+        }
+        document.addEventListener('mousemove', (event) => {
+          const confirmation = document.getElementById('confirmation');
+          confirmation.style.left = `${event.pageX - 90}px`;
+          confirmation.style.top = `${event.pageY - 20}px`;
+        });
+    </script>
+
+</body>
+</html>
