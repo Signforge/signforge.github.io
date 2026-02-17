@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/IcyCampaignLogo.png" type="image/x-icon">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <title>Blitz League</title>
+    <style>
+        body {
+            background-color: #111111;
+            color: #BFFF33;
+            font-family: "Audiowide", monospace;
+            font-optical-sizing: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 100;
+            padding-top: -20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+        }
+        th {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            width: 200px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 200px;
+        }
+        img#logo {
+            max-width: 48px;
+            width: 48px;
+            border: none;
+        }
+        img {
+            max-width: 200px;
+            max-height: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin: 15px;
+            border: 1px solid white;
+        }
+        img:hover {
+            transform: scale(1.2);
+        }
+        .confirmation {
+            background-color: #111111;
+            border: solid #BFFF33 1px;
+            position: absolute;
+            padding: 5px;
+            top: 500px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" alt="Icy Winter 2026 Logo" src="images/blitz.png">
+    <h1>Blitz League Signs</h1>
+    <p>💡 Click on a sign to copy its url. Then paste it in-game in the sign selection dialog</p>
+    <table>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th>CP Blocks Numbers 1 → 25<br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th>Mappers Signs<br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            <td>
+
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+
+            </td>
+        <tr>
+            <th>Startblock Signs<br></th>
+            <th>6x1 Signs<br></th>
+            <th>4x1 Signs<br></th>
+            <th>2x1 Signs<br></th>
+            <th>1x1 Signs<br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('')">
+            </td>
+        </tr>
+    </table>
+
+    <div id="confirmation" class="confirmation">Sign copied ! Paste it in-game !</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.visibility = 'visible';
+        setTimeout(() => {
+            confirmation.style.visibility = 'hidden';
+            }, 2000);
+           }).catch(err => {
+        console.error('Failed to copy: ', err);
+          });
+        }
+        document.addEventListener('mousemove', (event) => {
+          const confirmation = document.getElementById('confirmation');
+          confirmation.style.left = `${event.pageX - 130}px`;
+          confirmation.style.top = `${event.pageY - 20}px`;
+        });
+    </script>
+
+</body>
+</html>
