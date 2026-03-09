@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/revival.png" type="image/x-icon">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <title>Revival 2nd Edition</title>
+    <style>
+        body {
+            background-color: #020A11;
+            color: #FFF;
+            font-family: "Kode Mono", monospace;
+            font-optical-sizing: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 100;
+            padding-top: -20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+        }
+        th {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            width: 200px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 200px;
+        }
+        img#logo {
+            max-width: 48px;
+            width: 48px;
+            border: none;
+        }
+        img {
+            max-width: 400px;
+            max-height: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin: 5px;
+            border: 1px solid white;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        .confirmation {
+            background-color: #020A11;
+            border: solid #FFF 1px;
+            position: absolute;
+            padding: 5px;
+            top: 500px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" alt="Revival 2nd Edition Logo" src="images/revival.png">
+    <h1>Revival 2nd Edition</h1>
+    <p>💡 Click on a sign to copy its url. Then paste it in-game in the sign selection dialog</p>
+    <table>
+        <tr>
+            <th>6x1 Signs<br></th>
+            <th>4x1 Signs<br></th>
+            <th>2x1 Signs<br></th>
+            <th>1x1 Signs<br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_START.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_START.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_CHECKPOINT.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_CHECKPOINT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_FINISH.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_FINISH.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_MULTILAP.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_MULTILAP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_GPS.jpg" alt="If you see this text, a 6x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_6x1_GPS.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO1.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO2.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO2.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO3.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO3.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO4.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO4.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO5.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_LOGO5.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_GPS.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_GPS.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UP.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UPR.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UPR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_RIGHT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWNR.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWNR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWN.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWNL.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_DOWNL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_LEFT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UPL.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_ARROW_UPL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_UP.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_RIGHT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_DOWN.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_LEFT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_UP.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_RIGHT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_DOWN.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_LEFT.jpg" alt="If you see this text, a 4x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_4x1_SPIN_CCW_LEFT.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO1.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO2.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO2.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO3.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO3.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO4.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO4.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO5.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_LOGO5.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_GPS.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_GPS.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UP.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UPR.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UPR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_RIGHT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWNR.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWNR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWN.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWNL.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_DOWNL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_LEFT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UPL.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_ARROW_UPL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_UP.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_RIGHT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_DOWN.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_LEFT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_UP.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_RIGHT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_DOWN.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_LEFT.jpg" alt="If you see this text, a 2x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_2x1_SPIN_CCW_LEFT.jpg')">
+            </td>
+            <td>
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO1.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO1.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO2.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO2.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO3.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO3.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO4.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO4.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO5.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_LOGO5.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_GPS.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_GPS.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UP.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UPR.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UPR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_RIGHT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWNR.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWNR.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWN.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWNL.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_DOWNL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_LEFT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UPL.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_ARROW_UPL.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_UP.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_RIGHT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_DOWN.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_LEFT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CW_LEFT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_UP.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_UP.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_RIGHT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_RIGHT.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_DOWN.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_DOWN.jpg')">
+                <img src="https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_LEFT.jpg" alt="If you see this text, a 1x1 sign didn't load" onclick="copyToClipboard('https://download.dashmap.live/9168c060-e562-4b63-a8e2-5618be910c59/REV2_1x1_SPIN_CCW_LEFT.jpg')">
+            </td>
+        </tr>
+    </table>
+
+    <div id="confirmation" class="confirmation">Sign copied ! Paste it in-game !</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.visibility = 'visible';
+        setTimeout(() => {
+            confirmation.style.visibility = 'hidden';
+            }, 2000);
+           }).catch(err => {
+        console.error('Failed to copy: ', err);
+          });
+        }
+        document.addEventListener('mousemove', (event) => {
+          const confirmation = document.getElementById('confirmation');
+          confirmation.style.left = `${event.pageX - 130}px`;
+          confirmation.style.top = `${event.pageY - 20}px`;
+        });
+    </script>
+
+</body>
+</html>
