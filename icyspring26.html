@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/IcyCampaignLogo.png" type="image/x-icon">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <title>Icy Spring 2026</title>
+    <style>
+        body {
+            background-color: #D9E6F6;
+            color: #254E5C;
+            font-family: "Nova Mono", monospace;
+            font-optical-sizing: auto;
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            padding-top: -20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+        }
+        th {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            width: 200px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 200px;
+        }
+        img {
+            max-width: 200px;
+            max-height: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin: 15px;
+        }
+        img:hover {
+            transform: scale(1.2);
+        }
+        .confirmation {
+            background-color: #D9E6F6;
+            border: solid #254E5C 1px;
+            position: absolute;
+            padding: 5px;
+            top: 500px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" alt="Icy Spring 2026 Logo" src="images/icyspring26_logo.png">
+    <h1>Icy Spring 2026 Signs</h1>
+    <p>💡 Click on a sign to copy its url. Then paste it in-game in the sign selection dialog</p>
+    <table>
+        <tr>
+            <th>White Maps Backgrounds<br></th>
+            <th>Green Maps Backgrounds<br></th>
+            <th>Blue Maps Backgrounds<br></th>
+            <th>Red Maps Backgrounds<br></th>
+            <th>Black Maps Backgrounds<br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="" alt="White Map" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="Green Map" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="Blue Map" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="Red Map" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="Black Map" onclick="copyToClipboard('')">
+            </td>
+        </tr>
+        <tr>
+            <th>Blocks Backgrounds<br></th>
+            <th>6x1 Backgrounds<br></th>
+            <th>4x1 Backgrounds<br></th>
+            <th>2x1 Backgrounds<br></th>
+            <th>1x1 Backgrounds<br></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="" alt="Blocks" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="6x1" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="4x1" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="2x1" onclick="copyToClipboard('')">
+            </td>
+            <td>
+                <img src="" alt="1x1" onclick="copyToClipboard('')">
+            </td>
+        </tr>
+    </table>
+
+    <div id="confirmation" class="confirmation">Sign copied ! Paste it in-game !</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.visibility = 'visible';
+        setTimeout(() => {
+            confirmation.style.visibility = 'hidden';
+            }, 2000);
+           }).catch(err => {
+        console.error('Failed to copy: ', err);
+          });
+        }
+        document.addEventListener('mousemove', (event) => {
+          const confirmation = document.getElementById('confirmation');
+          confirmation.style.left = `${event.pageX - 50}px`;
+          confirmation.style.top = `${event.pageY - 20}px`;
+        });
+    </script>
+
+</body>
+</html>
