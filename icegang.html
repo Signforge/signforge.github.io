@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icegang.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">
+    <title>Ice Gang</title>
+    <style>
+        body {
+            background-color: #002536;
+            color: #00d1b5;
+            font-family: "Fira Code", monospace;
+            font-weight: lighter;
+            font-optical-sizing: auto;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            width: 400px;
+        }
+
+        img {
+            max-height: 200px;
+            max-width: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: solid #00d1b5 1px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        #logo {
+            border: none;
+            margin-top: 64px;
+        }
+
+        .confirmation {
+            background-color: #00d1b5;
+            border: solid white 1px;
+            color: white;
+            position: absolute;
+            padding: 5px;
+            visibility: hidden;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: top 0.05s, left 0.05s;
+        }
+
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Tabs container for horizontal alignment */
+        .tab-labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style tab labels */
+        .tab-label {
+            padding: 5px 20px 5px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Change background color of the active tab */
+        input[type="radio"]:checked ~ .tab-labels .tab-label {
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+
+        #tab1:checked ~ .tab-labels .tab-label:nth-of-type(1),
+        #tab2:checked ~ .tab-labels .tab-label:nth-of-type(2),
+        #tab3:checked ~ .tab-labels .tab-label:nth-of-type(3) {
+            background: white;
+            color: #002536;
+            border-bottom: 2px solid white;
+        }
+
+        /* Hide all tab content by default */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Show the selected tab's content */
+        #tab1:checked ~ .tab-container .content-1,
+        #tab2:checked ~ .tab-container .content-2,
+        #tab3:checked ~ .tab-container .content-3 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" style="max-width: 64px;" src="images/icegang.png">
+    <p>💡 Click on a sign to copy its URL. Then paste it in-game in the sign selection dialog.</p>
+
+    <input type="radio" id="tab1" name="tabs" checked>
+    <input type="radio" id="tab2" name="tabs">
+    <input type="radio" id="tab3" name="tabs">
+
+    <div class="tab-labels">
+        <label for="tab1" class="tab-label">Signs</label>
+        <label for="tab2" class="tab-label">6x1 Blocks & Checkpoints</label>
+        <label for="tab3" class="tab-label">Mappers names</label>
+    </div>
+
+
+    <div class="tab-container">
+        <div class="tab-content content-1">
+            <table>
+                <tr>
+                    <th>1x1 Backgrounds</th>
+                    <th>2x1 Backgrounds</th>
+                    <th>4x1 Backgrounds</th>
+                    <th>6x1 Backgrounds</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="1x1" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="2x1" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="4x1" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="6x1" onclick="copyToClipboard('')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-2">
+
+            <table>
+                <tr>
+                    <th>Blocks</th>
+                    <th>Checkpoints</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="Block Sign" onclick="copyToClipboard('')">
+                    </td>
+
+                    <td>
+                        <img src="" alt="Checkpoint Sign" onclick="copyToClipboard('')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-content content-3">
+            <table>
+                <tr>
+                    <th>1x1 Mapper Sign</th>
+                    <th>2x1 Mapper Sign</th>
+                    <th>4x1 Mapper Sign</th>
+                    <th>6x1 Mapper Sign</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="Mapper Sign" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="Mapper Sign" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="Mapper Sign" onclick="copyToClipboard('')">
+                    </td>
+                    <td>
+                        <img src="" alt="Mapper Sign" onclick="copyToClipboard('')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">Sign copied! Paste it in-game!</div>
+
+    <script>
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const confirmation = document.getElementById('confirmation');
+                confirmation.style.visibility = 'visible';
+                setTimeout(() => {
+                    confirmation.style.visibility = 'hidden';
+                }, 1000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.left = `${event.pageX - 150}px`;
+            confirmation.style.top = `${event.pageY - 50}px`;
+        });
+    </script>
+
+</body>
+</html>
